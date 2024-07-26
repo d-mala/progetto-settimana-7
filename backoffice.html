@@ -12,7 +12,7 @@
     />
     <link rel="stylesheet" href="assets/css/style.css" />
   </head>
-  <body class="bg-dark">
+  <body>
     <header>
       <nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
         <div class="container-fluid">
@@ -33,15 +33,14 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a
-                  class="nav-link active"
-                  aria-current="page"
-                  href="./index.html"
+                <a class="nav-link" aria-current="page" href="./index.html"
                   >Home</a
                 >
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="./backoffice.html">Backoffice</a>
+                <a class="nav-link active" href="./backoffice.html"
+                  >Backoffice</a
+                >
               </li>
             </ul>
             <form class="d-flex" role="search">
@@ -60,30 +59,93 @@
       </nav>
     </header>
     <main>
-      <div class="container-fluid text-center text-light py-5" id="games-bg">
-        <div class="row my-3 my-md-5">
-          <div class="col">
-            <h1>Epic<span class="text-danger fw-bold">Stop</span></h1>
-            <h3>Compra qua i tuoi giochi preferiti!</h3>
+      <div class="toast-container position-fixed bottom-0 end-0 p-3">
+        <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+          <div class="toast-header">
+            <strong class="me-auto">Notifica</strong>
+            <small>Adesso</small>
+            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+          </div>
+          <div id="toast-message" class="toast-body">
+            Messaggio
           </div>
         </div>
       </div>
-      <div class="container py-5">
-        <div
-          class="row row-cols-1 row-cols-sm-2 row-cols-md-4 row-cols-lg-4 g-3"
-          id="catalog"
-        >
-          <!-- <div class="card" style="width: 18rem">
-            <img src="..." class="card-img-top" alt="..." />
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
-              </p>
-              <a href="./product-page.html" class="btn btn-primary">Go somewhere</a>
-            </div> -->
+      
+      </div>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12 col-md-6 text-center text-light py-5" id="games-bg">
+            <h1>Epic<span class="text-danger fw-bold">Stop</span></h1>
+            <h3>Pannello di controllo</h3>
           </div>
+          <div class="col-12 col-md-6 p-5">
+            <h2 class="text-center">Aggiungi un nuovo articolo</h2>
+            <form id="product-form">
+                <div class="mb-3">
+                  <label for="name" class="form-label">Nome articolo</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="name"
+                    placeholder="Super Mario Odissey"
+                    required
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="description" class="form-label"
+                    >Descrizione del prodotto</label
+                  >
+                  <textarea
+                    class="form-control"
+                    id="description"
+                    placeholder="Unisciti a Mario in un'enorme avventura in 3D in giro per il mondo"
+                    rows="3"
+                    required
+                  ></textarea>
+                </div>
+                <div class="mb-3">
+                    <label for="name" class="form-label">Brand</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="brand"
+                      placeholder="Nintendo"
+                      required
+                    />
+                  </div>   
+                  <div class="mb-3">
+                    <label for="name" class="form-label">Immagine del prodotto</label>
+                    <input
+                      type="url"
+                      class="form-control"
+                      id="imageUrl"
+                      placeholder="https://m.media-amazon.com/images/I/91-VfRp-i0L._AC_UF894,1000_QL80_.jpg"
+                      required
+                    />
+                  </div>   
+                <div class="mb-3">
+                  <label for="price" class="form-label"
+                    >Prezzo dell'articolo</label
+                  >
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="price"
+                    placeholder="60"
+                    required
+                  />
+                </div>       
+                <div class="d-flex justify-content-between">
+                  <button type="submit" class="btn me-2 btn-primary w-100 fw-bold">
+                    SALVA ARTICOLO
+                  </button>
+                  <!-- creo un button per resettare il form -->
+                  <button type="reset" class="btn btn-warning w-100 fw-bold">RESET</button>
+                </div> 
+                
+              </form>
+        </div>
         </div>
       </div>
     </main>
@@ -146,6 +208,6 @@
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
-    <script src="./assets/js/index.js"></script>
+    <script src="./assets/js/backoffice.js"></script>
   </body>
 </html>
