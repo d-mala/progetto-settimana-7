@@ -25,6 +25,10 @@ fetch('https://striveschool-api.herokuapp.com/api/product/', {
             <img src="${product.imageUrl}" class="card-img-top p-2" alt="" />
             <div class="card-body">
               <h5 class="card-title">${product.name}</h5>
+              <span
+              id="brand"
+              class="mb-2 badge rounded-pill text-bg-primary"
+            >${product.brand}</span>
               <p class="card-text">
                 ${product.description}
               </p>
